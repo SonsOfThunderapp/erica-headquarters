@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Erica Diaz Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-deep: #06101c;
+    --gold: #c9a227;
+    --gold-light: #e8d48b;
+    --glass: rgba(201, 162, 39, 0.08);
+    --text: #f5f0e6;
+    --muted: rgba(245, 240, 230, 0.55);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--navy-deep);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  .splash {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    background: radial-gradient(ellipse at 50% 30%, rgba(201,162,39,0.12) 0%, transparent 60%), var(--navy-deep);
+    position: relative;
+  }
+  .splash::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.4;
+  }
+  .trust-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+  .trust-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 48px;
+    opacity: 0.6;
+  }
+  .erica-anchor {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .erica-anchor::after {
+    content: 'ED';
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .brand span { color: var(--gold); }
+  .tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 64px;
+  }
+  .modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 420px;
+  }
+  .module {
+    background: var(--glass);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 16px;
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .module:hover, .module:active {
+    background: rgba(201,162,39,0.15);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .module.hero {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(201,162,39,0.18), rgba(201,162,39,0.06));
+    border-color: var(--gold);
+  }
+  .module.soon {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .module.soon:hover { transform: none; background: var(--glass); border-color: rgba(201,162,39,0.2); }
+  .module-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--gold);
+  }
+  .module-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .module-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+  .footer {
+    position: absolute;
+    bottom: 24px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="splash">
+    <div class="trust-line">Over $700 Million Sold<br>800+ Five-Star Reviews<br>Top 1% in Florida</div>
+    <div class="trust-rule"></div>
+    <div class="erica-anchor"></div>
+    <div class="brand">Erica <span>Diaz</span> Team</div>
+    <div class="tagline">Real Estate, Reimagined</div>
+    <div class="modules">
+      <a class="module hero" href="https://erica-openhouse-f61590a4.netlify.app" target="_self">
+        <div class="module-icon">&#9670;</div>
+        <div class="module-label">Open House</div>
+        <div class="module-sub">Live now</div>
+      </a>
+      <div class="module">
+        <div class="module-icon">&#9679;</div>
+        <div class="module-label">Radar</div>
+        <div class="module-sub">Coming soon</div>
+      </div>
+      <div class="module">
+        <div class="module-icon">&#9675;</div>
+        <div class="module-label">Showings</div>
+        <div class="module-sub">Coming soon</div>
+      </div>
+      <div class="module">
+        <div class="module-icon">&#9993;</div>
+        <div class="module-label">Newsletter</div>
+        <div class="module-sub">Coming soon</div>
+      </div>
+      <div class="module">
+        <div class="module-icon">&#9733;</div>
+        <div class="module-label">Journey</div>
+        <div class="module-sub">Coming soon</div>
+      </div>
+    </div>
+    <div class="footer">Erica Diaz Team &middot; Winter Garden, FL</div>
+  </div>
+</body>
+</html>
