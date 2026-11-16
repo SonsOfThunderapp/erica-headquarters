@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/radar"
+  to = "/radar/"
+  status = 301

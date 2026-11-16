@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Erica Diaz Team</title>
+<meta name="description" content="Erica Diaz Team headquarters — Winter Garden, Florida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0a1628;
+    --navy: #0A1628;
     --navy-deep: #06101c;
-    --gold: #c9a227;
+    --gold: #C9A227;
     --gold-light: #e8d48b;
     --glass: rgba(201, 162, 39, 0.08);
     --text: #f5f0e6;
     --muted: rgba(245, 240, 230, 0.55);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { background: var(--navy-deep); color: var(--text); }
   body {
-    background: var(--navy-deep);
-    color: var(--text);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
+    min-height: 100dvh;
   }
   .splash {
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 24px;
+    padding: 40px 24px calc(48px + env(safe-area-inset-bottom));
     background: radial-gradient(ellipse at 50% 30%, rgba(201,162,39,0.12) 0%, transparent 60%), var(--navy-deep);
     position: relative;
   }
@@ -44,41 +48,37 @@
   }
   .trust-line {
     font-family: 'Playfair Display', serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.04em;
     color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 48px;
-    line-height: 1.8;
+    margin-bottom: 28px;
+    line-height: 1.7;
+    max-width: 22em;
   }
   .trust-rule {
     width: 60px;
     height: 1px;
     background: var(--gold);
-    margin: 0 auto 48px;
+    margin: 0 auto 28px;
     opacity: 0.6;
   }
   .erica-anchor {
-    width: 140px;
-    height: 140px;
+    width: 152px;
+    height: 152px;
     border-radius: 50%;
     border: 2px solid var(--gold);
-    background: var(--glass);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
-    position: relative;
+    background: var(--navy);
+    margin-bottom: 28px;
     overflow: hidden;
+    box-shadow: 0 0 0 6px rgba(201,162,39,0.12), 0 16px 40px rgba(0,0,0,0.35);
   }
-  .erica-anchor::after {
-    content: 'ED';
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 0.05em;
+  .erica-anchor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
   .brand {
     font-family: 'Playfair Display', serif;
@@ -94,7 +94,7 @@
     color: var(--muted);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 64px;
+    margin-bottom: 36px;
   }
   .modules {
     display: grid;
@@ -125,8 +125,9 @@
     border-color: var(--gold);
   }
   .module.soon {
-    opacity: 0.4;
+    opacity: 0.45;
     cursor: default;
+    pointer-events: none;
   }
   .module.soon:hover { transform: none; background: var(--glass); border-color: rgba(201,162,39,0.2); }
   .module-icon {
@@ -147,44 +148,49 @@
     letter-spacing: 0.05em;
   }
   .footer {
-    position: absolute;
-    bottom: 24px;
+    margin-top: 28px;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
+  @media (min-width: 720px) {
+    .trust-line { font-size: 16px; }
+    .erica-anchor { width: 168px; height: 168px; }
+  }
 </style>
 </head>
 <body>
   <div class="splash">
-    <div class="trust-line">Over $700 Million Sold<br>800+ Five-Star Reviews<br>Top 1% in Florida</div>
+    <div class="trust-line">Over seven hundred million sold. Eight hundred five-star reviews. Top one percent in Florida.</div>
     <div class="trust-rule"></div>
-    <div class="erica-anchor"></div>
+    <div class="erica-anchor">
+      <img src="assets/erica-anchor.svg" alt="Erica Diaz" width="168" height="168">
+    </div>
     <div class="brand">Erica <span>Diaz</span> Team</div>
     <div class="tagline">Real Estate, Reimagined</div>
     <div class="modules">
-      <a class="module hero" href="https://erica-openhouse-f61590a4.netlify.app" target="_self">
+      <a class="module hero" href="https://erica-openhouse-f61590a4.netlify.app">
         <div class="module-icon">&#9670;</div>
         <div class="module-label">Open House</div>
         <div class="module-sub">Live now</div>
       </a>
-      <div class="module">
+      <a class="module" href="radar/">
         <div class="module-icon">&#9679;</div>
         <div class="module-label">Radar</div>
-        <div class="module-sub">Coming soon</div>
-      </div>
-      <div class="module">
+        <div class="module-sub">Neighborhood pulse</div>
+      </a>
+      <div class="module soon">
         <div class="module-icon">&#9675;</div>
         <div class="module-label">Showings</div>
         <div class="module-sub">Coming soon</div>
       </div>
-      <div class="module">
+      <div class="module soon">
         <div class="module-icon">&#9993;</div>
         <div class="module-label">Newsletter</div>
         <div class="module-sub">Coming soon</div>
       </div>
-      <div class="module">
+      <div class="module soon">
         <div class="module-icon">&#9733;</div>
         <div class="module-label">Journey</div>
         <div class="module-sub">Coming soon</div>
