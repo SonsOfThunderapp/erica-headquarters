@@ -2,278 +2,225 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Erica Diaz Team — Headquarters</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal: #04A2B3;
-  --black: #0a0a0a;
-  --off: #f4f4f4;
-  --gray: #444;
+  --teal-soft: #E6F4F6;
+  --teal-mid: #B8E0E6;
+  --bg: #F7FBFC;
+  --card: #FFFFFF;
+  --text: #1C2B33;
+  --muted: #5A6B73;
+  --border: rgba(4,162,179,0.15);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--off);
-  color: var(--gray);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
 }
-.liquid-bg {
-  position: fixed; inset: 0; z-index: -1;
-  background: radial-gradient(circle at 20% 30%, rgba(4,162,179,0.09) 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(4,162,179,0.07) 0%, transparent 50%);
-  animation: drift 28s ease-in-out infinite alternate;
-}
-@keyframes drift {
-  0% { transform: translate(0,0) scale(1); }
-  100% { transform: translate(-40px,25px) scale(1.08); }
-}
-.blob {
-  position: fixed; border-radius: 50%; filter: blur(70px); opacity: 0.35; z-index: -1;
-  animation: float 22s ease-in-out infinite;
-}
-.blob1 { width: 420px; height: 420px; background: #04A2B3; top: -120px; left: -120px; }
-.blob2 { width: 320px; height: 320px; background: #0a0a0a; bottom: -100px; right: -100px; animation-delay: -8s; opacity: 0.18; }
-.blob3 { width: 200px; height: 200px; background: #04A2B3; top: 40%; left: 70%; animation-delay: -4s; opacity: 0.2; }
-@keyframes float {
-  0%,100% { transform: translate(0,0) rotate(0deg); }
-  33% { transform: translate(50px,-40px) rotate(8deg); }
-  66% { transform: translate(-30px,50px) rotate(-5deg); }
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--bg);
+  position: relative;
+  padding-bottom: 72px;
 }
 header {
-  background: rgba(10,10,10,0.72);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 16px 22px;
-  display: flex; align-items: center; justify-content: space-between;
-  position: sticky; top: 0; z-index: 100;
+  padding: 28px 20px 16px;
+  text-align: center;
 }
-.logo img { height: 30px; }
-.header-right {
-  font-size: 10px; color: rgba(255,255,255,0.75);
-  letter-spacing: 2.8px; text-transform: uppercase; font-weight: 500;
+.logo-script {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--teal);
+  letter-spacing: 1px;
 }
-.hero {
-  position: relative;
-  height: 90vh; min-height: 600px;
-  background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2000&q=85') center 35%/cover no-repeat;
-  display: flex; align-items: flex-end;
-  overflow: hidden;
+.logo-sub {
+  font-size: 9px;
+  letter-spacing: 3.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: -2px;
 }
-.hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.18) 100%);
+.tagline {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-transform: uppercase;
 }
-.hero-content {
-  position: relative; z-index: 2;
-  padding: 0 28px 75px;
-  color: white;
-  max-width: 540px;
-  animation: rise 1.3s ease-out both;
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 8px;
 }
-@keyframes rise {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+.photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 3px solid var(--teal);
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(4,162,179,0.2);
 }
-.eyebrow {
-  font-size: 11px; letter-spacing: 4.2px; text-transform: uppercase;
-  color: var(--teal); font-weight: 600; margin-bottom: 16px;
-  animation: fade 1.5s 0.25s both;
+.name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  text-align: center;
+  color: var(--teal);
+  margin-top: 4px;
 }
-@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-.hero h1 {
-  font-size: 58px; font-weight: 300; line-height: 0.96;
-  letter-spacing: -1.8px; margin-bottom: 18px;
-}
-.hero h1 strong { font-weight: 600; display: block; }
-.hero p {
-  font-size: 16.5px; max-width: 380px; margin-bottom: 34px;
-  opacity: 0.92; line-height: 1.55;
-}
-.cta {
-  display: inline-block; background: var(--teal); color: white;
-  padding: 18px 38px; border-radius: 50px; text-decoration: none;
-  font-weight: 600; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase;
-  box-shadow: 0 10px 35px rgba(4,162,179,0.45);
-  transition: all 0.45s cubic-bezier(0.2,0.8,0.2,1);
-  position: relative; overflow: hidden;
-}
-.cta::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.7s;
-}
-.cta:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 18px 45px rgba(4,162,179,0.55); }
-.cta:hover::after { transform: translateX(100%); }
-.trust {
-  display: flex; gap: 38px; margin-top: 48px;
-  font-size: 11px; letter-spacing: 0.9px; text-transform: uppercase; font-weight: 500;
-}
-.trust strong {
-  display: block; font-size: 28px; font-weight: 600; color: white;
-  letter-spacing: -0.6px; margin-bottom: 4px;
-}
-.section { padding: 90px 20px 110px; max-width: 700px; margin: 0 auto; }
-.section-label {
-  font-size: 11px; letter-spacing: 4.2px; text-transform: uppercase;
-  color: var(--teal); font-weight: 600; margin-bottom: 42px;
+.cards {
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 .card {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.45);
-  border-radius: 22px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  text-decoration: none; color: inherit; display: block;
-  box-shadow: 0 12px 45px rgba(0,0,0,0.09);
-  transition: all 0.55s cubic-bezier(0.2,0.8,0.2,1);
-  animation: cardIn 0.9s ease-out both;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 12px rgba(4,162,179,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 88px;
 }
-.card:nth-child(2) { animation-delay: 0.12s; }
-.card:nth-child(3) { animation-delay: 0.24s; }
-.card:nth-child(4) { animation-delay: 0.36s; }
-.card:nth-child(5) { animation-delay: 0.48s; }
-.card:nth-child(6) { animation-delay: 0.6s; }
-@keyframes cardIn {
-  from { opacity: 0; transform: translateY(35px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.card:hover {
-  transform: translateY(-14px) scale(1.02);
-  box-shadow: 0 30px 70px rgba(4,162,179,0.2);
-  border-color: rgba(4,162,179,0.35);
-}
-.card-img {
-  height: 230px;
-  background-size: cover; background-position: center;
-  position: relative;
-  transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
-}
-.card:hover .card-img { transform: scale(1.07); }
-.badge {
-  position: absolute; top: 18px; right: 18px;
-  background: rgba(4,162,179,0.92);
-  backdrop-filter: blur(12px);
-  color: white; font-size: 9px; font-weight: 700;
-  letter-spacing: 1.4px; padding: 7px 15px;
-  border-radius: 22px; text-transform: uppercase;
-}
-.soon .badge { background: rgba(0,0,0,0.5); }
-.style-tag {
-  position: absolute; bottom: 14px; left: 16px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(10px);
-  color: white; font-size: 9px; font-weight: 600;
-  letter-spacing: 1.2px; padding: 5px 12px;
-  border-radius: 16px; text-transform: uppercase;
-}
-.card-body { padding: 26px 28px 30px; }
+.card:active { transform: scale(0.98); }
 .card h3 {
-  font-size: 23px; font-weight: 600; color: var(--black);
-  margin-bottom: 7px; letter-spacing: -0.5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.3px;
 }
-.card p { font-size: 15px; line-height: 1.55; }
-.soon { opacity: 0.82; }
-footer {
-  background: var(--black); color: #888;
-  text-align: center; padding: 42px 20px;
-  font-size: 12px; letter-spacing: 0.5px;
+.card p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
 }
-footer a { color: var(--teal); text-decoration: none; }
+.wide { grid-column: 1 / -1; }
+.radar-preview {
+  margin-top: 8px;
+  height: 60px;
+  background: radial-gradient(circle at center, var(--teal-soft) 0%, transparent 70%);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.ring {
+  position: absolute;
+  border: 1.5px solid rgba(4,162,179,0.35);
+  border-radius: 50%;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+}
+.ring1 { width: 24px; height: 24px; }
+.ring2 { width: 44px; height: 44px; }
+.ring3 { width: 64px; height: 64px; }
+.dot-center {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 0 3px rgba(4,162,179,0.25);
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+  z-index: 100;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.nav-item.active { color: var(--teal); font-weight: 600; }
+.nav-item span { font-size: 18px; }
+@media (min-width: 600px) {
+  .app { max-width: 900px; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
 </style>
 </head>
 <body>
-<div class="liquid-bg"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+<div class="app">
+  <header>
+    <div class="logo-script">erica diaz</div>
+    <div class="logo-sub">TEAM · REAL ESTATE</div>
+    <div class="tagline">Winter Garden’s Premier Real Estate Team</div>
+  </header>
 
-<header>
-  <div class="logo"><img src="https://ericadiazteam.com/wp-content/uploads/2024/10/erica-diaz-logo2.webp" alt="Erica Diaz Team"></div>
-  <div class="header-right">Headquarters</div>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Client Headquarters</div>
-    <h1>Every home.<br><strong>One team.</strong></h1>
-    <p>Traditional. Coastal. Mediterranean. Ranch. The private tools behind every listing.</p>
-    <a class="cta" href="https://erica-openhouse-f61590a4.netlify.app" target="_blank">Enter Open House</a>
-    <div class="trust">
-      <div><strong>$700M+</strong>Sold</div>
-      <div><strong>800+</strong>Five-Star</div>
-      <div><strong>Top 1%</strong>Florida</div>
-    </div>
+  <div class="photo-wrap">
+    <img class="photo" src="https://ericadiazteam.com/wp-content/uploads/2024/10/erica-diaz-logo2.webp" alt="Erica Diaz" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 88 88%22%3E%3Ccircle cx=%2244%22 cy=%2244%22 r=%2244%22 fill=%22%2304A2B3%22/%3E%3Ctext x=%2244%22 y=%2250%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2228%22 font-family=%22serif%22%3EED%3C/text%3E%3C/svg%3E'">
   </div>
-</section>
+  <div class="name">erica diaz</div>
 
-<section class="section">
-  <div class="section-label">Tools</div>
-
-  <a class="card" href="https://erica-openhouse-f61590a4.netlify.app" target="_blank">
-    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80')">
-      <div class="badge">Live</div>
-      <div class="style-tag">Modern</div>
-    </div>
-    <div class="card-body">
-      <h3>Open House</h3>
-      <p>Live countdown, full photo tour, and instant contact — the experience every client expects.</p>
-    </div>
-  </a>
-
-  <div class="card soon">
-    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdbc?auto=format&fit=crop&w=1000&q=80')">
-      <div class="badge">Soon</div>
-      <div class="style-tag">Traditional</div>
-    </div>
-    <div class="card-body">
+  <div class="cards">
+    <a class="card" href="/radar">
       <h3>Neighborhood Radar</h3>
-      <p>What’s happening within five to ten miles of any listing.</p>
-    </div>
+      <p>What’s nearby</p>
+      <div class="radar-preview">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="dot-center"></div>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <h3>This week’s Showings</h3>
+      <p>7 scheduled</p>
+    </a>
+    <a class="card" href="#">
+      <h3>Browse homes</h3>
+      <p>Active listings</p>
+    </a>
+    <a class="card" href="https://erica-openhouse-f61590a4.netlify.app" target="_blank">
+      <h3>Open houses</h3>
+      <p>This weekend</p>
+    </a>
+    <a class="card" href="#">
+      <h3>Newsletter</h3>
+      <p>Weekly notes</p>
+    </a>
+    <a class="card" href="#">
+      <h3>Buyer journey</h3>
+      <p>Year one</p>
+    </a>
   </div>
+</div>
 
-  <div class="card soon">
-    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80')">
-      <div class="badge">Soon</div>
-      <div class="style-tag">Coastal</div>
-    </div>
-    <div class="card-body">
-      <h3>Showing Route</h3>
-      <p>The clean path between homes, timed and mapped.</p>
-    </div>
-  </div>
-
-  <div class="card soon">
-    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80')">
-      <div class="badge">Soon</div>
-      <div class="style-tag">Mediterranean</div>
-    </div>
-    <div class="card-body">
-      <h3>Zip Newsletter</h3>
-      <p>Weekly local notes delivered to the right clients.</p>
-    </div>
-  </div>
-
-  <div class="card soon">
-    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80')">
-      <div class="badge">Soon</div>
-      <div class="style-tag">Ranch</div>
-    </div>
-    <div class="card-body">
-      <h3>Year-One Journey</h3>
-      <p>Voice check-ins that keep the relationship alive after closing.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  Erica Diaz Team · Winter Garden, FL · <a href="tel:4079042702">407-904-2702</a>
-</footer>
+<nav class="bottom-nav">
+  <a class="nav-item active" href="/"><span>🏠</span>HOME</a>
+  <a class="nav-item" href="#"><span>🔍</span>BROWSE</a>
+  <a class="nav-item" href="/radar"><span>◎</span>RADAR</a>
+  <a class="nav-item" href="#"><span>🗺️</span>MAP</a>
+  <a class="nav-item" href="#"><span>💬</span>MESSAGES</a>
+</nav>
 </body>
 </html>
